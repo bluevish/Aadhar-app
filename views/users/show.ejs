@@ -1,0 +1,33 @@
+<% include ../partials/header%>
+
+<div class="container">
+    <div class="row">
+        <p class="lead">Aadhar</p>
+        <div class="col-md-2">
+        </div>
+            <div class="col-md-8">
+                <div>
+                    
+                    <div class="thumbnail circThumb center">
+                        <img class="img-responsive circImg" src="<%=user.avatar%>">
+                    </div>
+                </div>
+                <br>
+                
+                <div class="well">
+                    <div>
+                        <h3 style="text-align:center"><%=user.username%></h3>
+                        <p style="text-align:center"><%=user.firstName%> <%=user.lastName%></p>
+                        <p><%=user.status%></p>
+                    </div>
+                    
+                </div>
+            </div>
+      
+        
+    </div>
+</div>
+
+
+
+<% include ../partials/footer%>

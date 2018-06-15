@@ -1,0 +1,63 @@
+<% include ../partials/header%>
+
+
+<div class="container">
+    <div class="row">
+        <p class="lead">Aadhar</p>
+        <div class="col-md-2">
+        </div>
+            <div class="col-md-8">
+                <div>
+                    
+                    <div class="thumbnail circThumb center">
+                        <img class="img-responsive circImg" src="<%=currentUser.avatar%>">
+                    </div>
+                </div>
+                <br>
+                
+                <div class="well">
+                    <div>
+                        <div class="thumbnail">
+                <h1 class="form-heading">Profile</h1>
+                <div class="log-form">
+                    <form action="/user/edit?_method=PUT" method=POST>
+                      
+                       
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input class="form-control" type="text" id="firstName" name="firstName" value="<%=currentUser.firstName%>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input class="form-control" type="text" id="lastName" name="lastName" value="<%=currentUser.lastName%>" required>
+                        </div>
+                        
+                         <div class="form-group">
+                             <label for="email">email</label>
+                            <input class="form-control" type="email" id="email" name="email" value="<%=currentUser.email%>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Biography</label>
+                            <textarea class="form-control" type="text" id="status" name="status" rows=8><%=currentUser.status%></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-primary btn-block">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                    </div>
+                    
+                </div>
+            </div>
+      
+        
+    </div>
+</div>
+
+
+
+
+
+
+<% include ../partials/footer%>

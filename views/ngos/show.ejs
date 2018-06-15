@@ -1,0 +1,96 @@
+<%include ../partials/header%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Aadhar</p>
+            <div class="list-group">
+                <li class="list-group-item active"><a href="/ngo/<%=ngo._id%>">About</a></li>
+                <li class="list-group-item"><a href="/ngo/<%=ngo._id%>/contact">Contact</a></li>
+                <li class="list-group-item"><a href="/ngo/<%=ngo._id%>/reviews">Reviews</a></li>
+            </div>
+            <div id="map"></div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%=ngo.image%>">
+                <div class="caption-full">
+                    <h4 class="pull-right"><%=ngo.cause%></h4>
+                    <h4><a><%=ngo.name%></a></h4>
+                    <p><%=ngo.description%></p>
+                    <hr/>
+                    <a class="btn btn-success btn-lg" href="<%=ngo.ngoLink%>">Click here to visit the NGO</a>
+                    <hr/>
+                    <% if(currentUser && (ngo.author.id.equals(currentUser._id)||currentUser.isAdmin)){ %>
+                        <a class="btn btn-xs btn-warning" href="/ngo/<%=ngo._id%>/edit">Edit</a>
+                        <form class="delete-form" action="/ngo/<%=ngo._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-xs btn-danger">Delete</button>
+                        </form>
+                    <% } %>
+                </div>
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/ngo/<%=ngo._id%>/comments/new">Add new comment</a>
+                </div>
+                <hr/>
+                <div>
+                    <%ngo.comments.forEach(function(comment){%>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <strong><a href="/user/<%=comment.author.id%>"><%=comment.author.username%></a></strong>
+                                <span class="pull-right"><%= moment(comment.date).fromNow() %></span>
+                                <p>
+                                    <%=comment.text%>
+                                </p>
+                                <% if(currentUser && (comment.author.id.equals(currentUser._id)||currentUser.isAdmin)){ %>
+                                    <a class="btn btn-xs btn-warning" href="/ngo/<%=ngo._id%>/comments/<%=comment._id%>/edit">
+                                        Edit
+                                    </a>
+                                    <form class="delete-form" action="/ngo/<%=ngo._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                        <button class="btn btn-xs btn-danger">Delete</button>
+                                    </form>
+                                <% } %>
+                            </div>
+                        </div>
+                    <% })%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+  function initMap() {
+    var lat = <%= ngo.lat %>;
+    var lng = <%= ngo.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= ngo.name %><br />
+      <%= ngo.address %></strong>
+      <p><%= ngo.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS3dfGGrJxTSK8yxUHbj7YgavwlnAtXTo&callback=initMap"></script>
+
+
+
+<%include ../partials/footer%>

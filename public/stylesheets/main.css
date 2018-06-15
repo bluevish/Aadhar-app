@@ -1,0 +1,247 @@
+body{
+	background:white;
+	font-family:Lato;
+	color:black;
+}
+
+.jumbotron{
+	color: white;
+	background: #3a0b1d;
+}
+
+
+.ngo-page .thumbnail{
+    width:250px;
+    height: 350px;
+}
+
+
+.thumbnail img{
+    width:100%;
+}
+
+.thumbnail{
+    padding: 0;
+}
+
+.thumbnail .caption-full{
+    padding: 9px;
+}
+
+
+.delete-form{
+    display: inline;
+}
+
+.form-info{
+    width:50% ;
+    margin:25px auto
+}
+
+.log-form{
+    width:70% ;
+    margin:55px auto
+}
+
+.form-heading{
+    text-align:center;
+	color: #3a0b1d;
+}
+
+#centerTxt{
+	text-align: center;
+	padding-top:25%;
+	color:white;
+}
+
+.gallery-style{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+
+
+
+
+
+
+.navbar-default {
+    background-color: #3a0b1d;
+    border-color: #3a0b1d;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color:white;
+    background-color: #23060e;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:focus {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #c8a049;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #23060e;
+    outline: none;
+}
+
+.dropdown-menu {
+    min-width: 80px;
+    background-color: #23060e;
+    border-radius: 0;
+}
+
+.dropdown-menu > li > a {
+    color: #fff;
+}
+
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:focus  {
+    color: #fff;
+}
+
+.navbar-default .navbar-brand:hover{
+    color: #c8a049;
+    background-color: transparent;
+}
+
+.btn-default:hover {
+    color: #333;
+    background-color: #c8a049;
+    border-color: #c8a049;
+}
+
+.btn-default:active, .btn-default:focus{
+	outline: none;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #3a0b1d;
+    border-color: #3a0b1d;
+}
+
+.list-group-item a{
+    color: #c8a049;
+}
+
+
+
+
+
+
+#heading{
+	font-weight: 700;
+	font-size: 5.0em;
+}
+
+
+.show{
+    color:#3a0b1d;
+    text-align:center; 
+    padding: 25px;
+    margin:25px auto;
+}
+
+.lead{
+    color:#3a0b1d;
+}
+
+.myimage img{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+}
+
+.circImg{
+ width:200px;
+ height:200px;
+ background-size: cover;
+ min-height: 100%;
+ max-height: 100%;
+ border-radius: 50%;
+}
+
+.circThumb {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+
+.center {
+    margin: auto;
+    padding: 10px;
+}
+
+.profile{
+    margin: auto auto; 
+    padding: auto;
+}
+
+
+
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.about{
+    text-align:center; 
+    line-height: 70px;
+}
+
+.aboutPara{
+    line-height: 30px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 120px;
+}
+
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 120px;
+	background: #3a0b1d;
+	border-top: 1px solid #9bd9e0;
+	margin: 0;
+	padding: 0;
+}
+
+#footer > div {
+	margin: 0 auto;
+	padding: 30px 0 28px;
+	overflow: hidden;
+	text-align: center;
+	width: 960px;
+}
+#footer div p {
+	color: #ededed;
+	display: inline-block;
+	float: center;
+	font-size: 12px;
+	letter-spacing: 0.05em;
+	margin: 0;
+	padding: 27px 0 0;
+	text-align: center;
+}
+#footer div p a {
+    color : white;
+}
+

@@ -1,0 +1,50 @@
+<% include ../partials/header%>
+
+<div class="container">
+    <header class="jumbotron">
+        <h1>This is volunteer page</h1>
+        <p>Happy Volunteer</p>
+        <% if(currentUser&&currentUser.isAdmin) { %>
+            <a href="ngo/new" class="btn btn-lg btn-default">Add a new NGO</a>
+        <% } %>
+        
+        
+    </header>
+    
+    <%if(ngos.length<1){%>
+        <div class="col-md-12 text-center">
+            <h3>No result found</h3>
+        </div>
+    <%} else { %>    
+        
+    
+        <div class="row gallery-style">
+            
+            <div class="col-lg-12">
+                
+                <p>View our hand-pick NGOs from all over the world</p>
+            </div>
+            
+        </div>
+        <%ngos.forEach(function(ngo){%>
+            <div class="col-md-3 col-sm-6">
+                <div class="ngo-page">
+                    <div class="thumbnail">
+                        <img src="<%=ngo.image%>">
+                        <div class="caption" style="text-align:center">
+                            <h4><%=ngo.name%></h4>
+                            <a href="/ngo/<%=ngo.id%>" class="btn btn-primary">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <%});%>
+    <%}%>
+
+</div>
+
+   
+
+
+
+<% include ../partials/footer%>
