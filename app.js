@@ -17,8 +17,8 @@ var ngoRoutes     = require("./routes/ngo.js"),
     indexRoutes   = require("./routes/index.js"),
     contactRoutes = require("./routes/contact");
 
-var url=process.env.DATABASEURL||"mongodb://localhost/aadharApp";
-mongoose.connect(url);
+var url=process.env.DATABASEURL||"mongodb://localhost:27017/aadharApp";
+mongoose.connect(url, { useNewUrlParser : true});
 
 
 app.locals.moment = require('moment');
