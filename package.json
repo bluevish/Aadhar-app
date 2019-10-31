@@ -21,7 +21,7 @@
     "locus": "^2.0.1",
     "method-override": "^2.3.10",
     "moment": "^2.19.1",
-    "mongoose": "^5.5.12",
+    "mongoose": "^5.7.5",
     "node-geocoder": "^3.22.0",
     "node-mailer": "^0.1.1",
     "nodemon": "^1.12.1",
