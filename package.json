@@ -20,7 +20,7 @@
     "js": "^0.1.0",
     "locus": "^2.0.1",
     "method-override": "^2.3.10",
-    "moment": "^2.19.1",
+    "moment": "^2.29.4",
     "mongoose": "^5.5.12",
     "node-geocoder": "^3.22.0",
     "node-mailer": "^0.1.1",
